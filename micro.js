@@ -87,7 +87,7 @@ function getCall(path, namespace, params, callback, useToken) {
     if (xmlHttp.readyState == 4) ;
     callback(JSON.parse(xmlHttp.responseText), xmlHttp.status);
   };
-  xmlHttp.open("GET", "https://api.m3o.dev/" + path + formatParams(params), true);
+  xmlHttp.open("GET", "http://localhost:8080/" + path + formatParams(params), true);
   xmlHttp.setRequestHeader("micro-namespace", namespace);
   if (useToken && getCookie("micro_access")) {
     xmlHttp.setRequestHeader("authorization", "Bearer " + getCookie("micro_access"));
@@ -123,7 +123,7 @@ function postCall(path, namespace, params, callback, useToken) {
     if (xmlHttp.readyState == 4) ;
     callback(JSON.parse(xmlHttp.responseText), xmlHttp.status);
   };
-  xmlHttp.open("POST", "https://api.m3o.dev/" + path, true); // true for asynchronous
+  xmlHttp.open("POST", "http://localhost:8080/" + path, true); // true for asynchronous
   xmlHttp.setRequestHeader("micro-namespace", namespace);
   if (useToken && getCookie("micro_access")) {
     xmlHttp.setRequestHeader("authorization", "Bearer " + getCookie("micro_access"));
