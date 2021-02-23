@@ -23,9 +23,7 @@ Copy the below code
 ```js
 document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementById("btn").onclick = function () {
-        Micro.post(
-        "helloworld/call",
-            "micro",
+        Micro.post("helloworld/call", "micro",
             {
                 name: "Joe",
             },
